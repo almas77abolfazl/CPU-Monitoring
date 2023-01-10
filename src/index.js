@@ -21,9 +21,6 @@ const createWindow = () => {
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, "index.html"));
 
-  // Open the DevTools.
-  mainWindow.webContents.openDevTools();
-
   setInterval(() => {
     os.cpuUsage((v) => {
       mainWindow.webContents.send("cpu", v * 100);
